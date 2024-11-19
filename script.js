@@ -1,14 +1,23 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+const scoreDisplay = document.getElementById('score')
+
+let score = 0
 
 const jump = () => { 
     mario.classList.add('jump-mario')
+    incrementScore()
 
     setTimeout(() => {
 
         mario.classList.remove('jump-mario')
 
     }, 500)
+}
+
+const incrementScore = () => {
+    score++;
+    scoreDisplay.textContent = `Score: ${score}`
 }
 
 const loop = setInterval(() => {
